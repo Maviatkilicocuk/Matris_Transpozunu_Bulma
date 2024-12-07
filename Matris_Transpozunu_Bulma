@@ -1,0 +1,48 @@
+package Diziler;
+import java.util.Scanner;
+public class Matris_Transpozunu_Bulma {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+
+        System.out.print("Dizinin boyutunu (x'i) giriniz (örn x * y): ");
+        int x = scan.nextInt();
+
+        System.out.print("Dizinin boyutunu (y'yi) giriniz (örn x * y): ");
+        int y = scan.nextInt();
+
+
+        int[][] dizi = new int[x][y];
+
+
+        System.out.println("Dizinin elemanlarını giriniz (her bir satır için):");
+
+        for (int i = 0; i < x; i++) {
+            for (int j = 0; j < y; j++) {
+                System.out.print("Uzaklik[" + i + "][" + j + "] = ");
+                dizi[i][j] = scan.nextInt();
+            }
+        }
+
+        System.out.println("Girilen matris:");
+        for (int i = 0; i < x; i++) {
+            for (int j = 0; j < y; j++) {
+                System.out.print(dizi[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        int[][] tersi = new int[y][x];
+
+        System.out.println("Girilen matrisin transpozu:");
+        for (int i = 0; i < y; i++) {
+            for (int j = 0; j < x; j++) {
+                tersi[i][j] = dizi[j][i];
+                System.out.print(tersi[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+
+    }
+}
